@@ -1,0 +1,84 @@
+when agent is using tool show tool symbol also with tool complete name
+
+
+2 : Tell me the top 5 days which had low production
+
+
+Orchestrator Agent
+Analyzing query structure and intent...
+
+Orchestrator Agent
+Classification: Descriptive Analytics
+
+Orchestrator Agent
+Routing to Descriptive Agent...
+
+Descriptive Agent
+Generating SQL query for analysis...
+
+Descriptive Agent (using Tool sql_query_execution_tool)
+Executing query...
+
+Descriptive Agent
+Query executed successfully. Processing results...
+
+Descriptive Agent
+Sending results to Response Generation Agent...
+
+Response Agent
+Analyzing results and patterns...
+
+Response Agent
+Generating data visualization...
+
+Response Agent
+Preparing streaming response...
+
+
+ 3: Tell me the main reason for low production and recommend how to improve it
+
+
+Orchestrator Agent
+Analyzing query structure and intent...
+
+Orchestrator Agent
+Classification: Diagnostic and Prescriptive Analytics
+
+Orchestrator Agent
+Routing to Diagnostic Agent...
+
+Diagnostic Agent
+Diagnostic Agent calling Descriptive agent for Data with question (For the dates 2024-01-12, 2024-02-03, 2024-03-15, 2024-04-22, 2024-05-09, provide data on total production, machine downtime (with machine IDs and failure types), operator presence and skill levels, raw material availability and delays, defective bottle counts with rejection reasons, and environmental conditions like temperature and humidity.) ...
+
+Descriptive Agent (using Tool sql_query_execution_tool)
+Executing query...
+
+Descriptive Agent
+Query executed successfully. Processing results...
+
+Descriptive Agent (usising Tool data_saving-tool)
+saved data to csv file and retun msg tto Diagnostic Agent with fiel anme and path...
+
+Diagnostic Agent (using Tool python_interpretaer_tool)
+pwerformaed Root cause analysis performed on data. and retrun resut to Response Agent
+
+Prescriptive Agent
+Prescriptive Agent calling Descriptive agent for Data with question (Get maintenance logs or frequent downtime machines over last 6 months) ...
+
+Descriptive Agent (using Tool sql_query_execution_tool)
+Executing query...
+
+Descriptive Agent
+Query executed successfully. Processing results...
+
+Descriptive Agent (using Tool data_saving-tool)
+saved data to csv file and retun msg tto Diagnostic Agent with fiel anme and path...
+
+Prescriptive Agent (using python_interpretaer_tool)
+generates recommendations using data. and retrun resut to Response Agent
+
+Response Agent
+Analyzing results and patterns...
+
+Response Agent
+Preparing streaming response...

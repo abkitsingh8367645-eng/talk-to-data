@@ -1,0 +1,161 @@
+I want to build a text to sql chatbot for and entripse, so plz help me in that. for create an application flow. i will use this document for llm that will write the code to create the application usingf dumy data , in python / fast api, and reasct noesjs for frontend. 
+
+
+take example of bhaiya & company an manufactuign compamy (produde aluminum folis). 
+
+
+1. Descriptive Analytics What happened?
+        ○ This type focuses on summarizing historical data to understand changes that have occurred in a business.
+        ○ Example: Show me production trends for last 6 months
+2. Diagnostic Analytics
+ Why did it happen?
+        ○  Tell me the top 5 days which had low production
+        ○ Example: Analyzing why production dropped, able to anyze the recurring problem that affecting production efficienty , do roou cause ansysis of any kpis
+3. Prescriptive Analytics
+ What should we do?
+        ○ Recommends actions you can take to affect desired outcomes.
+	Example: ablility to provide recommendation to reduce downtime/ reduce production 
+
+
+now i neeed to build an apploication using mock data or dumy data , 
+
+User Proxy Agent
+Handles user interactions and tool execution
+
+🎯 Orchestrator Agent
+Routes queries to appropriate analytics workflows
+
+🗄️ Descriptive Agent
+Generates & executes SQL queries with error handling
+
+🔍 Diagnostic Agent 
+Root cause analysis with Python code execution
+
+💡 Prescriptive Agent
+Recommendations and action plans
+
+📝 Response Generation
+Creates user-friendly final responses
+
+write what ned to be create step by step
+
+i wantrr reespone in stre,ing form
+ia lso want chart in response.
+i also want to see the agent name ans its thinbkign while genartet the answer.
+user can also option to got for begin new chat
+
+
+
+Show me production trends for last 6 months , this question should appear on text box when user enter it the we can see the thinking box / containet should appear and all the processing and thinking steps happens their. 
+
+first it will go to the Orchestrator Agent, it will classify it as Descriptive Analytics ans route it to Descriptive agent, now the Descriptive agent will start ansysisi th e query and start creating the sql query and after tha it will sue the sql-query execution tool and whne its run successful ,m it will pass the respone to Response Generation agent , the resposn genarteion will give the respons ein streming mnnner and create chart for it.
+
+
+the final respon ssholuld be in stremming mannser and aftr thwe can see tah chat box. 
+
+
+
+
+
+
+ Tell me the top 5 days which had low production
+👤 User Input
+"Tell me the top 5 days which had low production"
+User enters query through chat interface
+↓
+2
+🎯 Orchestrator Analysis
+Classification: Descriptive Analytics
+Routes to SQL Generation Agent
+↓
+3
+🗄️ SQL Agent Processing
+SELECT date, production_volume FROM production_data ORDER BY production_volume ASC LIMIT 5
+Generates and executes SQL query
+↓
+4
+🔧 Tool Execution
+execute_sql_query
+✅ Query executed successfully
+Date	Production
+2024-01-12	9,800
+2024-02-03	10,100
+2024-03-15	10,300
+2024-04-22	10,500
+2024-05-09	10,700
+↓
+5
+📝 Response Generation
+
+
+Tell me the main reason for low production and recommend how to improve it
+
+👤 User Input
+"Tell me the main reason for low production and recommend how to improve it"
+User enters query through chat interface
+↓
+2
+🎯 Orchestrator Analysis
+Classification: Diagnostic & Prescriptive Analytics
+Routes to Diagnostic Agent
+↓
+3
+🔍 Diagnostic Agent Requests Data
+To SQL Generation Agent: For the dates 2024-01-12, 2024-02-03, 2024-03-15, 2024-04-22, 2024-05-09, provide data on total production, machine downtime (with machine IDs and failure types), operator presence and skill levels, raw material availability and delays, defective bottle counts with rejection reasons, and environmental conditions like temperature and humidity.
+↓
+4
+🗄️ SQL Agent Processing
+SELECT date, production_volume, machine_id, downtime_minutes, failure_type, operator_id, operator_skill, raw_material_status, delay_minutes, defective_bottles, rejection_reason, temperature, humidity FROM production_data WHERE date IN ('2024-01-12','2024-02-03','2024-03-15','2024-04-22','2024-05-09')
+Query written and executed, data returned to Diagnostic Agent
+↓
+5
+🐍 Diagnostic Agent Python Analysis
+# Python code to analyze root causes of low production\nimport pandas as pd\n# ... analysis logic ...
+Root cause analysis performed on returned data
+↓
+6
+💡 Prescriptive Agent Requests Data
+To SQL Generation Agent: Get maintenance logs or frequent downtime machines over last 6 months
+↓
+7
+🗄️ SQL Agent Processing
+SELECT machine_id, COUNT(*) as downtime_events, SUM(downtime_minutes) as total_downtime FROM maintenance_logs WHERE log_date >= DATE_SUB(NOW(), INTERVAL 6 MONTH) GROUP BY machine_id ORDER BY total_downtime DESC
+Query written and executed, data returned to Prescriptive Agent
+↓
+8
+💡 Prescriptive Agent Python Analysis
+# Python code to recommend improvements\nimport pandas as pd\n# ... recommendation logic ...
+Prescriptive Agent generates recommendations
+↓
+9
+📝 Response Generation Agent
+📊 generate_charts → Visualize root causes & recommendations
+📝 Text formatting → Prepare actionable insights
+🎨 UI components → Build response layout
+↓
+10
+📺 User Output
+📊 Chart Output
+
+
+
+
+now create this app, so thing what we can add , 
+
+i shos see ui in which the 1sut question is written, and when i send it my agent start working oin backed and i can see the working in thinking contaoiner. 
+
+so that we can create it usinf dumy mask data i need to shoe it to stack holder about my idea , that we can build this
+
+when some agen is using tool it shoe shoe in gui its using tool, if this thing its shod show thingk animation text try to amke it interative , its lok like  agentic sysysme
+
+whne 
+
+Diagnostic Agent requsyt some data form descriptive agent also shoe taht in ui while answer qusion
+
+
+
+
+
+
+
+
