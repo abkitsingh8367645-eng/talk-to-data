@@ -3,10 +3,13 @@
   "builds": [
     {
       "src": "server/index.ts",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "maxDuration": 30
+      }
     },
     {
-      "src": "client/src/**/*",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist/public"
@@ -24,14 +27,9 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/client/src/index.html"
+      "dest": "/dist/public/$1"
     }
   ],
-  "functions": {
-    "server/index.ts": {
-      "maxDuration": 30
-    }
-  },
   "env": {
     "NODE_ENV": "production"
   }
